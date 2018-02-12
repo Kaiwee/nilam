@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :find_user, only: [:show, :edit, :update, :verify, :unverify]
-	before_action :check_current_user, only: [:edit, :update]
+	before_action :check_current_user, only: [:show, :edit, :update]
 
 	def create
 		user = User.find_by_email(params[:user][:email])
