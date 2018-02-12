@@ -1,32 +1,32 @@
 <div id="form">
-	<h2>Create Book</h2>
+	<h2>Create A Book 创建一本书</h2>
 
 	<%= form_for @book, remote: true do |f| %>
 	<div class="text-field">
-	  <%= f.label :title %>
+	  <%= f.label "Title 书名" %>
 	  <%= f.text_field :title, type: 'title', class:"form-control", style:"width: 400px;" %>
 	</div>
 
 	<div class="text-field">
-	  <%= f.label :author %>
+	  <%= f.label "Author 作者" %>
 	  <%= f.text_field :author, type: 'author', class:"form-control", style:"width: 400px;" %>
 	</div>
 
 	<div class="number-field">
-	  <%= f.label 'Number of pages' %>
+	  <%= f.label 'Number of pages 页数' %>
 	  <%= f.number_field :pages, class:"form-control", style:"width: 400px;" %>
 	</div>
 
 	<div class="text-field">
-	  <%= f.label :description %>
+	  <%= f.label "Description 简介" %>
 	  <%= f.text_area :description, type: 'description', class:"form-control", style:"width: 400px; height: 400px;" %>
 	</div>
 
 	<div class="text-field">
-	  <%= f.label :comment %>
+	  <%= f.label "Comment 评语" %>
 	  <%= f.text_area :comment, type: 'comment', class:"form-control", style:"width: 400px; height: 400px;" %>
 	</div>
 
-	  <%= f.submit %>  
+	  <%= f.submit "Create 创建" %>
 	<% end %>
 </div>

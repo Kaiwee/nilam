@@ -4,37 +4,40 @@
 	<div class="col-md-2"></div>
 	<div class="col-md-8 col-md-offset-2">
     <h3><span class="text-primary"><%= @user.name %><br></span></h3>
-    <h3>Email: <span class="text-primary"><%= @user.email %><br></span></h3>
-    <p> Member since: <%= @user.created_at.strftime("%^B %Y") %> </p>
+    <h3>Email 电子邮件: <span class="text-primary"><%= @user.email %><br></span></h3>
+    <p> Member since 会员自: <%= @user.created_at.strftime("%^B %Y") %> </p>
   </div>
 </div>
 
-<h3>My Books</h3>
+<h3>My Books 我的书</h3>
 
-  <%  @books.each do |book| %>
-  <div class="col-md-3">
-    <div class="well" id="delete_<%= book.id %>">
+  <%  @book_months.each do |month, books| %>
+    <h2>月份 <%= month.strftime('%b %Y') %></h2>
+    <% for book in books %>
+      <div class="col-md-3">
+        <div class="well" id="delete_<%= book.id %>">
       
-      <p><strong>Title</strong> <br> <%= book.title %> </p>
-      <p><strong>Author</strong> <br> <%= book.author %> </p>
-      <p><strong>Number of pages</strong> <br> <%= book.pages %> </p>
-      <p><strong>Date:</strong> <%= book.created_at.strftime("%Y-%m-%d") %></p>
-      <p> <%= link_to 'Show', book_path(book) %> </p>
-      <% if logged_in? and current_user.id == book.user_id %>
-        <p><%= link_to 'Edit', edit_book_path(book) %></p>
-        <p><%= link_to 'Delete', book, method: :delete, data: {confirm: 'Are you sure?' }, remote: true %></p>
-      <% end %>
+          <p><strong>Title 书名</strong> <br> <%= book.title %> </p>
+          <p><strong>Author 作者</strong> <br> <%= book.author %> </p>
+          <p><strong>Number of pages 页数</strong> <br> <%= book.pages %> </p>
+          <p><strong>Date 日期:</strong> <%= book.created_at.strftime("%Y-%m-%d") %></p>
+          <p> <%= link_to 'Show 查看', book_path(book) %> </p>
 
-    </div>
-  </div>
-  <% end %>
-
-<div class="pagination">
+          <% if logged_in? and current_user.id == book.user_id %>
+            <p><%= link_to 'Edit 编辑', edit_book_path(book) %></p>
+            <p><%= link_to 'Delete 删除', book, method: :delete, data: {confirm: 'Are you sure 你确定吗?' }, remote: true %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="pagination">
   <div class="page_info">
-    <%= page_entries_info @books %>
+    显示<%= page_entries_info @books %> 本书
   </div>
     <%= will_paginate @books, :container => false %>
 </div>
+  <% end %>
+
 
 <% if logged_in? and current_user.admin? %>
   <% @users.each do |user|%>

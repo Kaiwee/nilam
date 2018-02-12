@@ -3,20 +3,20 @@
 <% if !logged_in? %>
 	<div id="form">
 		<div id="signup-page" class="sign-up">
-			<h3 class="text-center" id="sign-up-modal">Get Started</h3>
+			<h3 class="text-center" id="sign-up-modal">Get Started 开始使用</h3>
 			<%= form_for User.new do |form| %>
 			<%= render partial: '/static/form', object: form %>
 			<br>
 
 			<div class="submit-field">
-				<%= form.submit 'Sign Up' %>
+				<%= form.submit 'Sign Up 注册' %>
 			</div>
 			<% end %>
 		</div>
 		<br>
 
 		<div class="signup-page-footer">
-			<h3>Already have an account? <%= link_to "Log in", sign_in_path %></h3>
+			<h3>Already have an account 已经有一个帐户? <%= link_to "Log in 登录", sign_in_path %></h3>
 		</div>
 	</div>
 <% else %>

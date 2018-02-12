@@ -1,19 +1,19 @@
 <nav class="menu">
 	<ul class="active">
-		<li class="current-item"><%= link_to "Nilam", root_url %></li>
+		<li class="current-item"><%= link_to "Nilam 阅读报告", root_url %></li>
 
 		<% if !logged_in? %>
-		<li><%= link_to "Create a book", sign_in_path %></li>
+		<li><%= link_to "Create a book 创建一本书", sign_in_path %></li>
 		<% end %>
 
 		<% if logged_in? %>
-			<li><%= link_to "Create a book", new_book_path %></li>
-			<li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+			<li><%= link_to "Create a book 创建一本书", new_book_path %></li>
+			<li><%= link_to "Edit Profile 编辑个人资料", edit_user_path(current_user.id) %></li>
 			<li><%= link_to current_user.name, user_path(current_user) %></li>
-			<li><%= link_to "Sign out", sign_out_path, method: :delete, data: { confirm: 'Sign out?' } %></li>
+			<li><%= link_to "Sign out 登出", sign_out_path, method: :delete, data: { confirm: 'Sign out? 登出？' } %></li>
 
 		<% else %>
-			<li><%= link_to "Login", sign_in_path %></li>
+			<li><%= link_to "Login 登录", sign_in_path %></li>
 		<% end %>
 	</ul>
 </nav>

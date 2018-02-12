@@ -1,18 +1,18 @@
 
 <div class="text-field">
-  <%= form.label :email, class:"sign-up-form-label" %>
+  <%= form.label "Email 电子邮件", class:"sign-up-form-label" %>
   <%= form.text_field :email, type: 'email', class:"form-control", style:"width: 400px;" %>
 </div>
 
 <div class="password-field">
-  <%= form.label :password, class:"sign-up-form-label" %>
+  <%= form.label "Password 密码", class:"sign-up-form-label" %>
   <%= form.password_field :password, class:"form-control", style:"width: 400px;" %>
 </div>
 
 <div class="remember_me-field">
   <%= form.label :remember_me do %>
   	<%= form.check_box :remember_me %>
-  	<span>Remember me on this computer</span>
+  	<span>Remember me on this computer 在这台电脑上记住我</span>
   <% end %>
 </div>
 

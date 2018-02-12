@@ -16,15 +16,15 @@ class StaticController < ApplicationController
       			cookies[:auth_token] = @user.auth_token
       		end
 
-      		redirect_to '/', :notice => "Sign up successfully"
+      		redirect_to '/', :notice => "Sign up successfully 注册成功"
 		else
-			redirect_to '/sign_up', :notice => "Please try sign up again and fill in all details correctly"
+			redirect_to '/sign_up', :notice => "Please try sign up again and fill in all details correctly 请重新注册并正确填写所有信息"
 		end	
 	end
 
 	def destroy
 		cookies.delete(:auth_token)
-		redirect_to '/sign_in', :notice => "You have been signed out"
+		redirect_to '/sign_in', :notice => "You have been signed out 你已经退出"
 	end
 
 	private
