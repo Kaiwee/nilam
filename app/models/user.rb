@@ -3,7 +3,7 @@ class User < ApplicationRecord
 	before_create { generate_token(:auth_token) }
 	attr_accessor :remember_me
 
-	enum role: { user: 0, admin: 1 }
+	enum role: { user: "0", admin: "1" }
 
 	validates :email, uniqueness: true, presence: true
 
