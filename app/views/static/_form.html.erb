@@ -1,0 +1,15 @@
+
+<div class="text_field">
+	<%= form.label :name, class:"sign-up-form-label" %>
+	<%= form.text_field :name, class:"form-control", style:"width: 400px;", required: true %>
+</div>
+
+<div class="text-field">
+  <%= form.label :email, class:"sign-up-form-label" %>
+  <%= form.text_field :email, type: 'email', class:"form-control", style:"width: 400px;", required: true %>
+</div>
+
+<div class="password-field">
+	<%= form.label :password, class:"sign-up-form-label" %>
+	<%= form.password_field :password, class:"form-control", style:"width: 400px;", required: true %>
+</div>

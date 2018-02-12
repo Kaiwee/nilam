@@ -1,0 +1,167 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "books";
+
+body {
+  padding: 0;
+  margin: 0;
+  
+  font-family: 'Open Sans', sans-serif;
+}
+
+.hero-header {
+background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)
+    ),
+  asset_url("reading.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  height: 500px;
+  padding-top: 10%;
+  text-transform: uppercase;
+  color: red;
+  .main-text {
+    letter-spacing: 6px;
+    font-size: 70px;
+    margin-bottom: 20px;
+  }
+  .sub-text {
+    font-size: 30px;
+    letter-spacing: 4px;
+  }
+}
+
+.container {
+  margin: 20px;
+  padding: 20px;
+}
+
+/*----- Para -----*/
+
+.div-one {
+  min-height: 400px;
+  color: black;
+}
+
+.para-one {
+  width: 50%;
+  float: left;
+}
+
+.para-two {
+  width: 50%;
+  float: left;
+}
+ 
+/*----- Menu -----*/
+  .menu {
+    width:100%;
+    background:#5F9EA0;
+    height: 5em;
+  }
+
+.menu ul {
+  display:inline-block;
+}
+ 
+.menu li {
+  margin:0px 50px 0px 0px;
+  float:left;
+  list-style:none;
+  font-size: small;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+ 
+.menu li:last-child {
+  margin-right:0px;
+}
+ 
+.menu a {
+  color:#fff;
+  transition:color linear 0.15s;
+  text-decoration: none;
+}
+ 
+.menu a:hover, .menu .current-item a {
+  text-decoration:none;
+  color:#303030;
+}
+.menu {
+  width:100%;
+  background:#F4A460;
+}
+ 
+.menu ul {
+  display:inline-block;
+}
+ 
+.menu li {
+  margin:0px 50px 0px 0px;
+  float:left;
+  list-style:none;
+  font-size:17px;
+}
+ 
+.menu li:last-child {
+  margin-right:0px;
+}
+ 
+.menu a {
+  color:#fff;
+  transition:color linear 0.15s;
+  text-decoration: none;
+}
+ 
+.menu a:hover, .menu .current-item a {
+  text-decoration:none;
+  color:#303030;
+}
+
+#footer {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: -3em;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: auto;
+  ul {
+    li {
+      float: left;
+      margin-right: 20px;
+      list-style: none;
+      display: inline;
+    }
+  }
+}
+
+.input-group-btn {
+  border-style: solid;
+    border-color: Gainsboro;
+}
+
+#form {
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    margin: -100px 0 0 -200px;
+    top: 30%;
+    left: 50%;
+}
+
+#book {
+    position: absolute;
+    height: 200px;
+    width: 800px;
+    margin: -100px 0 0 -200px;
+    top: 30%;
+    left: 35%;
+}

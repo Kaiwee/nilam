@@ -1,0 +1,47 @@
+<h3 id="notice"><%= notice %></h3>
+
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8 col-md-offset-2">
+    <h3><span class="text-primary"><%= @user.name %><br></span></h3>
+    <h3>Email: <span class="text-primary"><%= @user.email %><br></span></h3>
+    <p> Member since: <%= @user.created_at.strftime("%^B %Y") %> </p>
+  </div>
+</div>
+
+<h3>My Books</h3>
+
+  <%  @books.each do |book| %>
+  <div class="col-md-3">
+    <div class="well" id="delete_<%= book.id %>">
+      
+      <p><strong>Title</strong> <br> <%= book.title %> </p>
+      <p><strong>Author</strong> <br> <%= book.author %> </p>
+      <p><strong>Number of pages</strong> <br> <%= book.pages %> </p>
+      <p><strong>Date:</strong> <%= book.created_at.strftime("%Y-%m-%d") %></p>
+      <p> <%= link_to 'Show', book_path(book) %> </p>
+      <% if logged_in? and current_user.id == book.user_id %>
+        <p><%= link_to 'Edit', edit_book_path(book) %></p>
+        <p><%= link_to 'Delete', book, method: :delete, data: {confirm: 'Are you sure?' }, remote: true %></p>
+      <% end %>
+
+    </div>
+  </div>
+  <% end %>
+
+<div class="pagination">
+  <div class="page_info">
+    <%= page_entries_info @books %>
+  </div>
+    <%= will_paginate @books, :container => false %>
+</div>
+
+<% if logged_in? and current_user.admin? %>
+  <% @users.each do |user|%>
+    <div id="users">
+      <ul>
+        <li><%= link_to user.name, user_path(user.id) %></li>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

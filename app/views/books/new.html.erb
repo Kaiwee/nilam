@@ -1,0 +1,32 @@
+<div id="form">
+	<h2>Create Book</h2>
+
+	<%= form_for @book, remote: true do |f| %>
+	<div class="text-field">
+	  <%= f.label :title %>
+	  <%= f.text_field :title, type: 'title', class:"form-control", style:"width: 400px;" %>
+	</div>
+
+	<div class="text-field">
+	  <%= f.label :author %>
+	  <%= f.text_field :author, type: 'author', class:"form-control", style:"width: 400px;" %>
+	</div>
+
+	<div class="number-field">
+	  <%= f.label 'Number of pages' %>
+	  <%= f.number_field :pages, class:"form-control", style:"width: 400px;" %>
+	</div>
+
+	<div class="text-field">
+	  <%= f.label :description %>
+	  <%= f.text_area :description, type: 'description', class:"form-control", style:"width: 400px; height: 400px;" %>
+	</div>
+
+	<div class="text-field">
+	  <%= f.label :comment %>
+	  <%= f.text_area :comment, type: 'comment', class:"form-control", style:"width: 400px; height: 400px;" %>
+	</div>
+
+	  <%= f.submit %>  
+	<% end %>
+</div>

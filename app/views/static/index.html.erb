@@ -1,0 +1,29 @@
+<h3 id="notice"><%= notice %></h3>
+
+<% if !logged_in? %>
+	<div id="form">
+		<div id="signup-page" class="sign-up">
+			<h3 class="text-center" id="sign-up-modal">Get Started</h3>
+			<%= form_for User.new do |form| %>
+			<%= render partial: '/static/form', object: form %>
+			<br>
+
+			<div class="submit-field">
+				<%= form.submit 'Sign Up' %>
+			</div>
+			<% end %>
+		</div>
+		<br>
+
+		<div class="signup-page-footer">
+			<h3>Already have an account? <%= link_to "Log in", sign_in_path %></h3>
+		</div>
+	</div>
+<% else %>
+	<div class="container">
+		<div class="hero-header">
+			<div class="main-text">阅读</div>
+			<div class="sub-text">读书是人生最重要的一门课，阅读书籍，助我们走好人生的每一步</div>
+		</div>
+	</div>	
+<% end %>
