@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 	
 	def show
 		@users = User.all
-		@books = current_user.books.all.paginate(page: params[:page], per_page: 12).order('created_at DESC')
+		@books = @user.books.all.paginate(page: params[:page], per_page: 12).order('created_at DESC')
 	end
 
 	def edit
