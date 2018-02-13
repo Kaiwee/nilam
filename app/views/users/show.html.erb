@@ -46,11 +46,20 @@
 </div>
 
 <% if logged_in? and current_user.admin? %>
+
+<h2>Users 用户 (Total 总共 <%= @users.count %>)</h2>
+<table>
+  <tr>
+    <th>Name 名字</th>
+    <th>Email 电子邮件</th>
+    <th>Year 班级</th>
+  </tr>
   <% @users.each do |user|%>
-    <div id="users">
-      <ul>
-        <li><%= link_to user.name, user_path(user.id) %></li>
-      </ul>
-    </div>
+    <tr>
+      <td><%= link_to user.name, user_path(user.id) %></td>
+      <td><%= user.email %></td>
+      <td><%= user.year %></td>
+    </tr>
   <% end %>
+</table>
 <% end %>
