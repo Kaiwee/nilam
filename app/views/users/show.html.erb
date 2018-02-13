@@ -9,10 +9,16 @@
   </div>
 </div>
 
-<h3>My Books 我的书</h3>
+<div class="books">
+<h3>My Books 我的书 (Total <%= @books.count %> book(s) 总共 <%= @books.count %> 本书)</h3>
 
+  <% if @books.size != 0 %>
   <%  @book_months.each do |month, books| %>
-    <h2>月份 <%= month.strftime('%b %Y') %></h2>
+  <div class="book row">
+    <div class="row list-group">
+      <div class="text-center">
+    <h4>月份 <%= month.strftime('%b %Y') %> (Total <%= books.count %> book(s) 总共 <%= books.count %> 本书)</h4>
+  </div>
     <% for book in books %>
       <div class="col-md-3">
         <div class="well" id="delete_<%= book.id %>">
@@ -30,14 +36,13 @@
         </div>
       </div>
     <% end %>
-    <div class="pagination">
-  <div class="page_info">
-    显示<%= page_entries_info @books %> 本书
   </div>
-    <%= will_paginate @books, :container => false %>
 </div>
   <% end %>
-
+        <% else %>
+        <h4 class="text-center">No book created</h4>
+      <% end %>
+</div>
 
 <% if logged_in? and current_user.admin? %>
   <% @users.each do |user|%>
