@@ -1,22 +1,22 @@
 <div id="book">
-  <h2><strong>Title</strong></h2>
+  <h2><strong>Title 书名</strong></h2>
   <h3><%= @book.title %></h3>
 
-  <h2><strong>Author</strong></h2>
+  <h2><strong>Author 作者</strong></h2>
   <h3><%= @book.author %></h3>
 
-  <h2><strong>Number of pages</strong></h2>
+  <h2><strong>Number of pages 页数</strong></h2>
   <h3><%= @book.pages %></h3>
 
-  <h2><strong>Description</strong></h2>
+  <h2><strong>Description 简介</strong></h2>
   <h3><%= @book.description %></h3>
 
-  <h2><strong>Comment</strong></h2>
+  <h2><strong>Comment 评语</strong></h2>
   <h3><%= @book.comment %></h3>
 
-  <p><strong>Date:</strong> <%= @book.created_at.strftime("%Y-%m-%d") %></p>
+  <p><strong>Date 日期:</strong> <%= @book.created_at.strftime("%Y-%m-%d") %></p>
 
   <% if logged_in? and current_user.id == @book.user_id %>
-    <h4><%= link_to 'Edit', edit_book_path(@book) %></h4>
+    <h4><%= link_to 'Edit 编辑', edit_book_path(@book) %></h4>
   <% end %>
 </div>
