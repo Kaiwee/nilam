@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 	end
 	
 	def show
-		@users = User.all
+		@users = User.all.order('year ASC')
 		@books = @user.books.all.order('created_at DESC')
 		@book_months = @books.group_by { |t| t.created_at.beginning_of_month }
 	end
